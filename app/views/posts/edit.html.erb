@@ -1,0 +1,18 @@
+<h1>Edit</h1>
+<%= form_for :post, url:post_path(@post), method: :patch do |f| %>
+    <% if @post.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+    <% end %>
+    <p>
+        <%= f.label :title%>
+        <%= f.text_field(:title, {:class => "form-control"}) %>
+    </p>
+    <p>
+        <%= f.label :content%>
+        <%= f.text_area(:content , {:class => "form-control"}) %>
+    </p>
+    <p>
+        <%= f.submit(:class => "btn btn-success")%>
+    </p>
+<% end %>
