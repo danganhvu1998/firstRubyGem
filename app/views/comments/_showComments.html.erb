@@ -1,0 +1,4 @@
+<h3> Comment </h3>
+<%= @post.comments.each do |cmt|%>
+    <strong> <%= cmt.username %>: </strong> <%= cmt.content %><br>
+<% end %>

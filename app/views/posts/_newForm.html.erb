@@ -1,6 +1,6 @@
-<h1>Edit</h1>
-<%= form_for :newPost, url:post_path(@newPost), method: :patch do |f| %>
-    <% if @newPost.errors.full_messages.each do |msg| %>
+<h1>Add blog here</h1>
+<%= form_for :newPost, url:posts_path do |f| %>
+    <% if @post.errors.full_messages.each do |msg| %>
         <div class="alert alert-danger"><%= msg %></div>
         <% end %>
     <% end %>

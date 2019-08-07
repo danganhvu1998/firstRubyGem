@@ -2,3 +2,8 @@
 <p> <%= @post.content %> </p>
 <%= link_to 'EDIT', edit_post_path(@post), :class => "btn btn-warning" %>
 <%= link_to 'DELETE', post_path(@post), method: :delete, data: {confirm: "Hell year?"}, :class => "btn btn-danger" %>
+
+<hr>
+    <%= render 'comments/form' %>
+<hr>
+    <%= render 'comments/showComments' %>

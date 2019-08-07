@@ -13,8 +13,10 @@ class PostsController < ApplicationController
     end
 
     def update
+        render plain: params[:post].inspect
+        return 
         @post = Post.find(params[:id])
-        if (@post.update(post_params_bullshit))
+        if (@post.update(post_params))
             redirect_to @post     
         else
             render "edit"
@@ -32,7 +34,7 @@ class PostsController < ApplicationController
     end
 
     def edit
-        @post = Post.find(params[:id])
+        @newPost = Post.find(params[:id])
     end
 
     def destroy
